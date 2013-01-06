@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.example.InteractiveClass"
+      android:versionCode="1"
+      android:versionName="1.0">
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+ 
+    <uses-sdk android:minSdkVersion="4" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".InteractiveClassActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+		<activity android:name=".mapclass"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAPCLASS" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CourseActivity"
+                  android:label="@string/rc_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN1" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FingerPaint"
+                  android:label="@string/sn_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN1" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+<activity android:name=".screen1"
+                  android:label="@string/menu_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN1" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".screen2"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN2" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".screen3"
+                  android:label="@string/qz_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN3" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".screen4"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN4" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".screen5"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN5" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".screen6"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN6" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Scores"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN6" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".help"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN6" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".profile"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN6" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".about"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN6" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".misc"
+                  android:label="@string/misc_name">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN6" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+          <uses-library android:required="true" android:name="com.google.android.maps"></uses-library>
+    </application>
+      <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+</manifest>

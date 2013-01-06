@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backi"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars = "vertical"
+        android:text="Login Screen - Lets the user login to the application. The user should have valid USC id and password. \n \nProfile - Has student percent attendance and the marks obtained in quiz.\n \nCheck-in - Lets the user check-in to the class.\n \nRegistered courses - Has the information of the courses of the courses the student is currently enrolled in.  \n \nQuiz - Lets the student take up the quiz given by the Professor.\n \nLocate Class - Shows the location of class on the USC map.\n \nLogout - Lets the student logout of the application.\n \nAbout Us - Has information about the application makers"
+        android:textAppearance="?android:attr/textAppearanceMedium" android:layout_marginLeft="7dp" android:layout_marginRight="7dp" android:layout_marginTop="100dp"/>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+         
+    </LinearLayout>
+
+   
+
+</LinearLayout>
+

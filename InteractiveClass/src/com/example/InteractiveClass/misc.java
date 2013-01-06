@@ -1,0 +1,148 @@
+package com.example.InteractiveClass;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+import android.app.ExpandableListActivity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Gravity;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.widget.AbsListView;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
+
+/**
+ * Demonstrates expandable lists using a custom {@link ExpandableListAdapter}
+ * from {@link BaseExpandableListAdapter}.
+ */
+public class misc extends ExpandableListActivity {
+
+    ExpandableListAdapter mAdapter;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //setContentView(R.layout.main3);
+        // Set up our adapter
+        mAdapter = new MyExpandableListAdapter();
+        setListAdapter(mAdapter);
+        registerForContextMenu(getExpandableListView());
+        getExpandableListView().setCacheColorHint(0);
+        getExpandableListView().setBackgroundColor(Color.rgb(152, 15, 7));
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+        menu.setHeaderTitle("Sample menu");
+       // menu.add(0, 0, 0, R.string.expandable_list_sample_action);
+    }
+    
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) item.getMenuInfo();
+        
+        String title = ((TextView) info.targetView).getText().toString();
+        
+        int type = ExpandableListView.getPackedPositionType(info.packedPosition);
+        if (type == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
+            int groupPos = ExpandableListView.getPackedPositionGroup(info.packedPosition); 
+            int childPos = ExpandableListView.getPackedPositionChild(info.packedPosition); 
+            Toast.makeText(this, title + ": Child " + childPos + " clicked in group " + groupPos,
+                    Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (type == ExpandableListView.PACKED_POSITION_TYPE_GROUP) {
+            int groupPos = ExpandableListView.getPackedPositionGroup(info.packedPosition); 
+            Toast.makeText(this, title + ": Group " + groupPos + " clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        
+        return false;
+    }
+
+    /**
+     * A simple adapter which maintains an ArrayList of photo resource Ids. 
+     * Each photo is displayed as an image. This adapter supports clearing the
+     * list of photos and adding a new photo.
+     *
+     */
+    public class MyExpandableListAdapter extends BaseExpandableListAdapter {
+        // Sample data set.  children[i] contains the children (String[]) for groups[i].
+    	//setContentView(R.layout.main);
+        private String[] groups = { "     CSCI 588 Misc Info", "     CSCI 510 Misc Info", "     CSCI 526 Misc Info" };
+        private String[][] children = {
+                {  "Name: Wei Guan ", "Location: PHE108 ","TA Office Hours:  THU 5.00pm - 6.00pm" ,"Name: Ramin Moazeni ", "Location: SAL334 ","TA Office Hours:  MON 4.00pm - 5.00pm"},
+                {  "Name: Thomas Tan ", "Location: SAL339 ","TA Office Hours:  Wed 2.30pm - 4.30pm", "Name: Qi Li ", "Location: SAL339 ","TA Office Hours:  MON 10.00am - 12.00pm"},
+                { "Name: Mike Zyda ", "Location: RTH321 ","Office Hours:  WED 5.00pm - 6.00pm" }
+        };
+        
+        public Object getChild(int groupPosition, int childPosition) {
+            return children[groupPosition][childPosition];
+        }
+
+        public long getChildId(int groupPosition, int childPosition) {
+            return childPosition;
+        }
+
+        public int getChildrenCount(int groupPosition) {
+            return children[groupPosition].length;
+        }
+
+        public TextView getGenericView() {
+            // Layout parameters for the ExpandableListView
+            AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, 64);
+            TextView textView = new TextView(misc.this);
+            textView.setLayoutParams(lp);
+            // Center the text vertically
+            textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+            // Set the text starting position
+            textView.setPadding(36, 0, 0, 0);
+            textView.setBackgroundColor(Color.rgb(152,15,7));
+            return textView;
+        }
+        
+        public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
+                View convertView, ViewGroup parent) {
+            TextView textView = getGenericView();
+            textView.setText(getChild(groupPosition, childPosition).toString());
+            return textView;
+        }
+
+        public Object getGroup(int groupPosition) {
+            return groups[groupPosition];
+        }
+
+        public int getGroupCount() {
+            return groups.length;
+        }
+
+        public long getGroupId(int groupPosition) {
+            return groupPosition;
+        }
+
+        public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
+                ViewGroup parent) {
+            TextView textView = getGenericView();
+            textView.setText(getGroup(groupPosition).toString());
+            return textView;
+        }
+
+        public boolean isChildSelectable(int groupPosition, int childPosition) {
+            return true;
+        }
+
+        public boolean hasStableIds() {
+            return true;
+        }
+
+    }
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back1"
+    >
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:text=" 2. Which of the following statement(s) are true?"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Desktop metaphor is an attempt to simulate an exact real desktop" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+		android:layout_marginRight="15dp"
+		android:text="Desktop metaphor suggests a conceptual model" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+		android:layout_marginRight="15dp"
+		android:text="Desktop model is complete and accurate" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+		android:layout_marginRight="15dp"
+		android:text="Direct Manipulation is an interface that as though the interaction was with a real-world object rather than with an abstract system" android:layout_marginBottom="20dp"/>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp" >
+        
+         <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next" />
+        </LinearLayout>
+
+   
+
+</LinearLayout>
+

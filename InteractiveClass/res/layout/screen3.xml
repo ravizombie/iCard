@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back1"
+    >
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:text="1. Use an icon to represent a file folder for interaction (e.g. pick up, copy, move file, etc.) is an example of which of the following :?"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="the 'recognition rather than recall' principle" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+		android:layout_marginRight="15dp"
+		android:text="direct manipulation" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+		android:layout_marginRight="15dp"
+		android:text="a metaphor" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+		android:layout_marginRight="15dp"
+		android:text="all of the above" android:layout_marginBottom="20dp"/>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp" >
+        
+          <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next" />
+    </LinearLayout>
+
+   
+
+</LinearLayout>
+

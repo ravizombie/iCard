@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backi"
+     >
+    <ImageView android:layout_marginLeft="130dp" android:layout_height="wrap_content" android:src="@drawable/prof" android:layout_width="wrap_content" android:id="@+id/imageView1" android:layout_marginTop="90dp"></ImageView>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars = "vertical"
+        android:text="Name: Kartik Shetty\n\nUSC ID: 4204015373\n\nAttendance Percentage in CSCI588: 90%\n\nGrade in CSCI588: 9/10 \n\nAttendance Percentage in CSCI526: 80%\n\nGrade in CSCI526: 8/10 \n\nAttendance Percentage in CSCI510: 95%\n\nGrade in CSCI510: 8/10\n\n"
+        android:textAppearance="?android:attr/textAppearanceMedium" android:layout_marginLeft="7dp" android:layout_marginRight="7dp" android:layout_marginTop="20dp"/>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+         
+    </LinearLayout>
+
+   
+
+</LinearLayout>
+

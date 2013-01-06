@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backh"
+    android:gravity="center"
+    >
+    <Button android:text="CSCI 526" android:layout_height="wrap_content" android:id="@+id/button1" android:layout_width="220sp"></Button>
+    <Button android:text="CSCI 588" android:layout_height="wrap_content" android:layout_width="220dp" android:id="@+id/button2"></Button>
+    <Button android:text="CSCI 510" android:layout_height="wrap_content" android:layout_width="220dp" android:id="@+id/button3"></Button>
+    <Button android:text="Logout" android:layout_height="wrap_content" android:layout_width="100dp" android:id="@+id/button4"></Button>
+</LinearLayout>
+
