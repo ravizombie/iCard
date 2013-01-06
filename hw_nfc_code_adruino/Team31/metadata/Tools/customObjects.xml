@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        Sample/customObjects.xml
+-->
+<apcmetadata>
+	<customobjects>
+        <customobject>
+            <name>Team31GetOauthToken</name>
+            <type>Action</type>
+            <sourcefile>tools/Team31GetOauthToken.groovy</sourcefile>
+        </customobject>
+        <customobject>
+            <name>Team31CreateHttpRequest</name>
+            <type>Action</type>
+            <sourcefile>tools/Team31CreateHttpRequest.groovy</sourcefile>
+        </customobject>
+    </customobjects>
+</apcmetadata>

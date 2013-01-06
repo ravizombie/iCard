@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.axeda</groupId>
+    <artifactId>hackathon-project</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <url>http://www.axeda.com</url>
+    <name>Hackathon 2013 Project</name>
+    <properties>
+        <maven.test.skip>false</maven.test.skip>
+        <junit-version>4.8.1</junit-version>
+        <servicelink-version>6.5</servicelink-version>
+        <groovy-version>1.8.6</groovy-version>
+        <httpbuilder.version>0.5.0</httpbuilder.version>
+        <commons-cli.version>1.1</commons-cli.version>
+        <commons-beanutils.version>1.6.1</commons-beanutils.version>
+        <commons-codec.version>1.2</commons-codec.version>
+        <commons-collections.version>3.2.1</commons-collections.version>
+        <commons-digester.version>1.8</commons-digester.version>
+        <commons-discovery.version>0.2</commons-discovery.version>
+        <commons-el.version>1.0</commons-el.version>
+        <commons-httpclient.version>3.0.1</commons-httpclient.version>
+        <commons-io.version>1.4</commons-io.version>
+        <commons-lang.version>2.0</commons-lang.version>
+        <commons-logging.version>1.0</commons-logging.version>
+        <commons-net.version>2.0</commons-net.version>
+        <commons-validator.version>1.0.2</commons-validator.version>
+        <j2ee.version>1.0</j2ee.version>
+        <servlet-api.version>2.4</servlet-api.version>
+        <jts.version>1.10</jts.version>
+        <maven-antrun-plugin.version>1.3</maven-antrun-plugin.version>
+        <rhino-js.version>1.7R1</rhino-js.version>
+        <maven-compiler-plugin.version>2.0.2</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.4.3</maven-surefire-plugin.version>
+        <maven-surefire-report-plugin.version>2.4.2</maven-surefire-report-plugin.version>
+        <maven-failsafe-plugin.version>2.5</maven-failsafe-plugin.version>
+        <properties-maven-plugin.version>1.0-alpha-2</properties-maven-plugin.version>
+        <junitperf.version>1.8</junitperf.version>
+        <junit.version>4.4</junit.version>
+        <activemq-core.version>5.2.0</activemq-core.version>
+        <commons-discovery.version>0.2</commons-discovery.version>
+        <selenium-server.version>1.0</selenium-server.version>
+        <selenium-java-client-driver.version>1.0</selenium-java-client-driver.version>
+        <htmlunit.version>2.5</htmlunit.version>
+        <httpunit.version>1.0</httpunit.version>
+        <nekohtml.version>0.9.5</nekohtml.version>
+        <axis.version>1.4</axis.version>
+        <axis-saaj.version>1.4</axis-saaj.version>
+        <shiftone-arbor.version>1.0</shiftone-arbor.version>
+        <shiftone-oocjndi.version>1.0</shiftone-oocjndi.version>
+        <ojdbc6.version>11.2.0.2.0</ojdbc6.version>
+        <axeda.protocol.version>6.1.5.1</axeda.protocol.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <!--<plugin>-->
+            <!--<groupId>org.codehaus.mojo</groupId>-->
+            <!--<artifactId>exec-maven-plugin</artifactId>-->
+            <!--<version>1.1.1</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>my-execution</id>-->
+            <!--<phase>package</phase>-->
+            <!--<goals>-->
+            <!--<goal>java</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+
+            <!--<configuration>-->
+            <!--<mainClass>com.axeda.provisioner.InstallMain</mainClass>-->
+            <!--<arguments>-->
+            <!--<argument>-f</argument>-->
+            <!--<argument>artisan.properties</argument>-->
+            <!--</arguments>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+
+    <modules>
+        <!--<module>artisan-acceptance-test</module>-->
+        <module>artisan-starter-html</module>
+        <module>artisan-starter-scripts</module>
+    </modules>
+
+
+    <repositories>
+        <!-- Repository containing Axeda Artifacts. -->
+        <repository>
+            <id>axeda-community-repo</id>
+            <name>Axeda Community Repository</name>
+            <url>http://atthackathon-sandbox.axeda.com/apps/hackathonrepo/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.axeda</groupId>
+            <artifactId>hackathon-project-installer</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>

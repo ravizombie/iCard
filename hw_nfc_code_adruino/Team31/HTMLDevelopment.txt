@@ -1,0 +1,102 @@
+##################################################################
+ Having mastered the Groovy side, it is now time to look at the UI
+##################################################################
+
+The HTML side is far more straightforward, but trickier (HTML / JavaScript is fickle beast at times). 
+
+There are 2 components to the UI: 
+
+- HTML displays 
+- JavaScript event handlers
+
+These can be bound together in any way which makes you productive, since all of the execution is client-side. There is, however, an example mechanism provided. 
+
+HTML
+====
+
+All of the HTML files are added to the application under: 
+
+	artisan-starter-html/src/main/webapp/apps/bootstrap
+
+These are all bundled up into the same custom application, and are automatically added to the application on each installation. 
+
+The landing page of the application is always the login.html file, which is used to establish a session with the Platform. This session is then used automatically via subsequent calls. 
+
+However, the post-login page is "index.html", which defines the tabs for the application. It is easy to add another tab simply by adding to the block of tab links within index.html as follows: 
+
+     <ul>
+         <li><a href="welcome.html"><span>Welcome</span></a></li>
+         <li><a href="yourapp.html"><span>Your App Here!</span></a></li>
+         <li><a href="logs.html"><span>Groovy Log</span></a></li>
+         <li><a href="sms.html"><span>SMS</span></a></li>
+         <li><a href="editmap.html"><span>Maps</span></a></li>
+         <li><a href="editlist.html"><span>Lists</span></a></li>
+     </ul>
+
+Several of these pages are already wired up to Scripto Services via the axeda.js JavaScript library. The "yourapp.html" provides an example that you should begin to modify. 
+
+On this page, the /js/fetch.js script is included to provide the event handlers: 
+
+	<script src="js/fetch.js" type="text/javascript"></script>
+
+The JavaScript is initialized via the following script definition at the bottom of the page: 
+
+	<script type="text/javascript">
+	    $(window).load(function () {
+	    App.init();
+
+	    })
+	</script>
+
+This will tie the HTML to the JavaScript, and in turn to the Platform calls.
+
+The event handler is invoked via a button: 
+
+	<input type="button" id="getDeviceData" value="Get Device Data">
+
+JavaScript
+==========
+
+The JavaScript implementations provide 2 functions:
+
+	- The ability to establish sessions with the Platform and invoke Scripto Services
+	- Event handler logic to interact with the HTML
+
+These functions are bound up into the following files: 
+
+	- axeda.js : The utility script which allows logins and communication with the platform. The primary functions are "callScripto" and "doLogin", which are invoked by the event handlers. 
+	- fetch.js : Provides the event handler logic and the Fetch* functions to invoke Scripto through the axeda.js files
+
+Event Handlers
+==============
+
+The yourapp.html interacts with a single event handler in the fetch.js script:
+
+    $('#getDeviceData').die().live('click', function () {
+        Fetch.callScriptoFetchDeviceData()
+    })
+
+This eventHandler is triggered by the button on the yourapp.html file. 
+
+This delegates to the following function: 
+
+    Fetch.callScriptoFetchDeviceData 
+    
+This uses the callScripto function from the axeda.js script to retrieve data from the Platform, which is passed to the following function:
+
+    Fetch.processDeviceJson
+    
+This function in turns maps the JSON to the HTML form fields. 
+
+Debugging
+=========
+
+There are several tools to use in your debugging, and we recommend the Developer Tools in Chrome, and Charles as a way to review the communication between the browser and
+the Platform. 
+
+Getting Started
+===============
+
+The best way to get started is to start modifying yourapp.html and the corresponding entries in fetch.js (they are labeled in the file). 
+
+Good luck!

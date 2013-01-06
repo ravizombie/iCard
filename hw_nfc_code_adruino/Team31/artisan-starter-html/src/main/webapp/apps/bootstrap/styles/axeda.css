@@ -1,0 +1,175 @@
+@import url("reset.css");
+
+/************************************
+* Global css
+*/
+body {
+    font: 11px Arial, Verdana, Helvetica, sans-serif;
+    background:url(../images/enterprise_body_bg.jpg);
+}
+
+ul
+{
+    list-style-type: circle;
+    padding: 0px;
+    margin: 0px;
+}
+ul li
+{
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 14px;
+}
+
+ol
+{
+    list-style-type: circle;
+    padding: 0px;
+    margin: 0px;
+}
+ol li
+{
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 14px;
+}
+
+.pretty {
+ 	border-right: 1px solid #C1DAD7;
+ 	border-bottom: 1px solid #C1DAD7;
+    border-top: 1px solid #C1DAD7;
+ 	background: #fff;
+ 	padding: 6px 6px 6px 12px;
+ 	color: #04086D;
+ }
+
+.prettyLabel {
+ 	border-right: 1px solid #C1DAD7;
+ 	border-bottom: 1px solid #C1DAD7;
+    border-top: 1px solid #C1DAD7;
+ 	background: #fff;
+ 	padding: 6px 6px 6px 12px;
+ 	color: #04086D;
+ 	font-weight:bold;
+ }
+
+ .prettyHeader {
+  	border-right: 1px solid #C1DAD7;
+  	border-bottom: 1px solid #C1DAD7;
+    border-top: 1px solid #C1DAD7;
+  	background: #7DBFE4;
+  	padding: 6px 6px 6px 12px;
+  	color: #04086D;
+  	font-weight:bold;
+  }
+
+
+
+/************************************
+* Edit from here
+*/
+
+#topBar{
+}
+
+.logo{
+    align: middle;
+    valign: middle;
+}
+
+.logo{
+    align: right;
+    valign: top;
+}
+
+.formText{
+    font-size: 14px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+.ramble{
+    font-size: 16px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    padding: 1em;
+}
+
+.formtitle{
+    font-size: 14px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    color: #04086D;
+    padding: 1em;
+    font-weight:bold;
+}
+
+.hdrtitle{
+    font-size: 18px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    color: #04086D;
+    padding: 1em;
+    font-weight:bold;
+}
+
+#wrapper{
+    position:relative; 
+    width:95%;
+    margin:1em auto;
+}
+
+#container{
+    position:relative;
+        top:1em;
+}
+
+.object{
+    margin-bottom:1em;
+    border:1px solid #3197E0;
+}
+
+#pageHeader{
+    font-size:2em;
+    font-family:Calibri;
+    font-weight:bold;
+    color: #04086D;
+}
+
+.title{
+    font-size:1.2em;
+    font-weight:bold;
+    background:#8CBDE2;
+    line-height:2em;
+    padding:0 1em;
+}
+
+.indent{
+    line-height:2em;
+    padding-left:3em;
+    padding-right:1em;
+    display:none;
+}
+
+
+.odd{
+    background:#C7D8E5;
+}
+.even{
+    background:#efefef;
+}
+
+.title span{
+    position:relative;
+    float:right;
+    font-size:1.8em;
+    cursor:pointer;
+}
+
+#refresh img{
+    height:2.5em;
+    width:2.5em;
+    cursor:pointer;
+    position:relative;
+    right:0;
+}
+#refresh{
+    float:right;
+    bottom:0;
+}

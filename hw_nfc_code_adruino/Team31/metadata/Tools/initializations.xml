@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        Framework/Initialization/AWCCInitialization.xml
+ -->
+<apcmetadata>
+		<initialization>
+				<step>
+                    <script content-type="xml">TailLog</script>
+                    <startLabel>TestLogTailer...</startLabel>
+                    <body>
+                            <Request/>
+                    </body>
+                    <endLabel>Log output done</endLabel>
+				</step>
+		</initialization>
+</apcmetadata>

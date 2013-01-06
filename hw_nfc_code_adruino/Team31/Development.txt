@@ -1,0 +1,70 @@
+#########################################
+ Congratulations, Team31, you made it!
+#########################################
+
+Now that you have installed your application and looked around a bit, it is time to start breaking it, and making your own!
+
+To help you along the way, we have provided you with a number of working "widgets" within the application that you can modify as you see fit. 
+
+Groovy Scripts
+==============
+
+There are 2 basic Groovy components to this application:
+
+- Custom REST Webservices ("Scripto" Services) which are defined via single Groovy Scripts. These are called "Custom Objects", and are executed on the Platform.
+  These are used by external clients, be they web applications or external systems. 
+
+- Custom Objects which are invoked from Expression Rules.
+  These are triggered by "events" in the system, such as Mobile Locations, Alarms or Data being sent by a Device. 
+
+It is possible to invoke Custom Objects from other Custom Objects (both synchronously and asynchronously), which allow you to "chain" behavior together to build up your application. 
+There are examples of this in the samples folder. 
+
+NOTE: Although your IDE may wish to add a "package" directive to your Custom Objects, it can create unpredictable behavior. You should remove any package directives from your scripts. 
+
+Naming your Scripts
+===================
+
+You MUST label your CustomObjects with your team prefix: Team31 . 
+
+So, to have a script named "foo.groovy", it must be named "Team31foo.groovy".
+
+Also, all Scripts should be alphaNumeric only. No spaces or special characters. 
+
+Logging
+=======
+
+Since the code is going to execute on the Platform, it is necessary to use Logging to see what's happening. You can trigger log output by including logging lines: 
+
+	logger.info "This is a log statement"
+
+You can then view this output via the Groovy Logs widget in your application.
+
+Calling your Scripto Services
+=============================
+
+As you are coding, you should test your Scripto REST Services using CURL, or another RESTClient (IntelliJ has a solid RESTClient plugin, and SOAPui works well.
+
+Here is the path you will want to invoke to view your Device data.
+
+https://atthackathon-sandbox.axeda.com/services/v1/rest/Scripto/execute/Team31YourApp?username=team31user&password=team31pass
+
+You can see that JSON is returned from this call. Although this is a GET, you can also POST to the Scripto Service. 
+
+Accessing Platform Data
+=======================
+
+The data available from your Device, and from other Extended Data constructs can all be accessed using the Groovy SDK (V1 and V2). Check out the Javadoc which has been 
+provided to see how to access this data. Also, a number of examples have been provided in the "samples" folder. 
+
+Getting Started
+===============
+
+We're developers, so GO BREAK SOMETHING! That's your best bet. Start with Team1YourApp.groovy. Make some changes, add some log output, change the JSON contract. 
+
+Just keep your original Team31.zip file. 
+
+Good luck!
+
+
+

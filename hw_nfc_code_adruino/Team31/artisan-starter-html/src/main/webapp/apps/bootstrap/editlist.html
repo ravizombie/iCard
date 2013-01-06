@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html style="height:147px">
+<head>
+    <title></title>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script src="js/chosen/chosen.jquery.js"></script>
+
+    <script src="js/listscript.js"></script>
+    <script src="js/axeda.js"></script>
+
+    <script src="js/jquery.cookie.js"></script>
+
+
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="flick/jquery-ui-1.8.17.custom.css">
+    <link rel="stylesheet" href="js/chosen/chosen.css">
+
+    <link rel="stylesheet" href="styles/axeda.css"/>
+
+
+    <script>
+        $(document).ready(function () {
+            //  $("select#color").chosen()
+            // $("select#key").chosen()
+             getLists();
+
+            $("#dialog-addListValue").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+                                saveListValue()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#addListValue").click(function () {
+                var map = $("select#listname").val();
+                if (map != "-1") {
+                    $("#dialog-addListValue").dialog("open")
+                } else {
+                    alert("select a valid map first")
+                }
+                return false;
+            });
+            $("#addListValue").button()
+
+
+
+
+
+            $("#dialog-addList").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+                                addList()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#addList").click(function () {
+                $("#dialog-addList").dialog("open")
+                return false;
+            });
+
+            $("#addList").button();
+            $("#dialog-confirmDeleteListValue").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+                                deleteListValue()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#deleteListValue").click(function () {
+                $("#dialog-confirmDeleteListValue").dialog("open")
+                return false;
+            });
+
+            $("#deleteListValue").button();
+
+            $("#dialog-confirmDeleteList").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+                                deleteList()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#deleteList").click(function () {
+                $("#dialog-confirmDeleteList").dialog("open")
+                return false;
+            });
+            $("#deleteList").button()
+
+        });
+    </script>
+
+</head>
+<body style="height:100%">
+
+<form id="selectform" style="margin-left: 6px">
+
+    <table>
+        <tr>
+            <td>
+                List
+            </td>
+            <td>
+                <select  id="listname" style="width:200px;">
+                </select>
+            </td>
+        </tr>
+        <tr>
+             <td>
+                 Value
+             </td>
+             <td>
+                 <select  id="listvalue" style="width:200px;">
+                 </select>
+             </td>
+         </tr>
+
+
+    </table>
+
+
+
+</form>
+
+<button id="addListValue">Add Value</button>
+
+<button id="deleteListValue">Delete Value</button>
+<button id="addList">Add List</button>
+<button id="deleteList">Delete List</button>
+
+<br/><br/>
+<span class="hdrtitle">This page is backed by the following artifacts in the following folders in your Artisan project:</span>
+
+<br/><br/>
+<table>
+    <tr>
+        <td class="prettyLabel">/artisan-starter-html/src/main/webapp/apps/bootstrap/editlist.html</td><td width="10">&nbsp;</td><td class="pretty">This HTML page. It imports and initializes the corresponding JavaScript.</td>
+    </tr>
+    <tr>
+        <td class="prettyLabel">/artisan-starter-html/src/main/webapp/apps/bootstrap/js/fetch.js</td><td width="10">&nbsp;</td><td class="pretty">This is the monolithic JS file which backs all of the tabs in this sample application.</td>
+    </tr>
+    <tr>
+        <td class="prettyLabel">/artisan-starter-html/src/main/webapp/apps/bootstrap/js/axeda.js</td><td width="10">&nbsp;</td><td class="pretty">This is the shared utility script which performs all actual communication with the Platform server.</td>
+    </tr>
+    <tr>
+        <td class="prettyLabel">/artisan-starter-scripts/src/main/groovy/tabs/EditListService.groovy</td><td width="10">&nbsp;</td><td class="pretty">The Groovy script which defines the Scripto Service that is invoked to manage Extended Lists in the system.</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div id="dialog-addListValue" title="Add a New Value">
+    <form id="loginform">
+        <table>
+
+            <tr>
+                <td>Value:</td>
+                <td width="5">&nbsp;</td>
+                <td><input type="text"  id="newlistvalue"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="dialog-addList" title="Add a New List">
+    <form id="addMapForm">
+        <table>
+            <tr>
+                <td>List Name:</td>
+                <td><input type="text"  id="newListName" value="Team31_"></td>
+            </tr>
+
+            <tr>
+                <td>Value:</td>
+                <td><input type="text"  id="newListAndValue"></td>
+            </tr>
+        </table>
+
+
+
+    </form>
+</div>
+
+
+<div id="dialog-confirmDeleteListValue" title="Delete Value">
+    Confirm delete of Value
+</div>
+
+
+
+<div id="dialog-confirmDeleteList" title="Delete List">
+    Confirm delete of List
+</div>
+
+</body>
+</html>

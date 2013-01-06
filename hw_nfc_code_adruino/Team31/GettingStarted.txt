@@ -1,0 +1,68 @@
+###########################################
+ Welcome Team31 to the 2013 m2m Hackathon!!
+###########################################
+
+This is your Artisan project, and it contains all of the Artifacts you will need to build yourself a custom app on the AT&T M2M Application Platform powered by Axeda. 
+
+This project is ready-to-go, and can be installed on the Platform to get you up & running with your own Custom Application in minutes. 
+
+The steps below will outline the process of getting started with your development. 
+
+Good luck, and Happy Hacking!!!
+
+Pre-Requisites
+==============
+
+Artisan is a Maven project framework. That means that if you don't have any Maven experience, you will soon. :-)
+
+You will need: 
+
+- Java 1.6 or greater
+- Maven 3.0 or greater
+- A Java/Groovy IDE (IntelliJ or Eclipse preferred)
+- Chrome for the UI work 
+
+Optional: 
+
+- If you are on Windows, you should download "curl" from the cygwin library. Heck, everyone should have cygwin if you are on Windows. This is not necessary, but it will make your life easier.
+
+Once you have these installed, you can proceed on to "Running Artisan".
+
+Running Artisan
+===============
+
+Since Artisan is simply a Maven project, and Maven is a convention-over-configuration framework, you don't have to do much to run it.
+
+From the root folder of your Artisan project (the same folder as this file), run the following from the command line: 
+
+mvn package -f upload.xml
+
+That should do it! Your credentials are already configured, as is the hostname. 
+
+Just to be sure, you should review the "artisan.log" file which has been generated in the same folder. You should see all of the scripts, and the custom applications, 
+being uploaded to the platform. 
+
+NOTE: If you see any errors in this log, PLEASE CONTACT THE TEAM. We'll drop by and figure out what the problem is and get you on track. 
+
+Visiting the Application
+========================
+
+Once you have successfully uploaded the application, you can visit it in your browser, and see the results of this installation.
+
+You can re-install at any time, and you likely will do so quite a few times as you make progress. :-)
+
+The URL for your application is: 
+
+https://atthackathon-sandbox.axeda.com/apps/bootstrapTeam31/login.html
+
+Your credentials are: 
+
+User: team31user 
+Pass: team31pass
+
+NOTE: If you have trouble accessing your application, PLEASE CONTACT THE TEAM. We'll drop by and figure out what the problem is and get you on track. 
+
+Moving On
+=========
+
+After you have browsed through the application, move on to the Development.txt file for more information on how to start building your solution. Check back here if you need to know your application. 

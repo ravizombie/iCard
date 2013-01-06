@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html style="height:147px">
+<head>
+    <title></title>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script src="js/chosen/chosen.jquery.js"></script>
+    <script src="js/axeda.js"></script>
+
+    <script src="js/mapscript.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/axeda.js"></script>
+
+
+
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="flick/jquery-ui-1.8.17.custom.css">
+    <link rel="stylesheet" href="js/chosen/chosen.css">
+
+    <link rel="stylesheet" href="styles/axeda.css"/>
+
+
+    <script>
+        $(document).ready(function () {
+            //  $("select#color").chosen()
+            // $("select#key").chosen()
+
+            getMaps();
+
+            $("#dialog-addKey").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+
+                                saveMapValue()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#addMapValue").click(function () {
+                var map = $("select#color").val();
+                if (map != "-1") {
+                    $("#dialog-addKey").dialog("open")
+                } else {
+                    alert("select a valid map first")
+                }
+                return false;
+            });
+            $("#addMapValue").button()
+
+
+            $("#dialog-confirmSaveMapValue").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+                                updateMapValue()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#saveMapValue").click(function () {
+                $("#dialog-confirmSaveMapValue").dialog("open")
+                return false;
+            });
+
+            $("#saveMapValue").button()
+
+
+            $("#dialog-addMap").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+                                addMap()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#addMap").click(function () {
+                $("#dialog-addMap").dialog("open")
+                return false;
+            });
+
+            $("#addMap").button();
+            $("#dialog-confirmDeleteKey").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+                                deleteMapValue()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#deleteMapValue").click(function () {
+                $("#dialog-confirmDeleteKey").dialog("open")
+                return false;
+            });
+
+            $("#deleteMapValue").button();
+
+            $("#dialog-confirmDeleteMap").dialog(
+                    {
+                        autoOpen:false,
+                        modal:true,
+                        buttons:{
+                            Ok:function () {
+                                deleteMap()
+                                $(this).dialog("close");
+                            },
+                            Cancel:function () {
+                                $(this).dialog("close");
+                            }
+                        }
+
+                    });
+
+            $("#deleteMap").click(function () {
+                $("#dialog-confirmDeleteMap").dialog("open")
+                return false;
+            });
+            $("#deleteMap").button()
+
+        });
+    </script>
+
+</head>
+<body style="height:100%">
+
+<form id="selectform" style="margin-left: 6px">
+
+    <table>
+        <tr>
+            <td>
+                Map:
+            </td>
+            <td width="5">&nbsp;</td>
+            <td>
+                <select  id="color" style="width:200px;">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Key:
+            </td>
+            <td width="5">&nbsp;</td>
+            <td>
+                <select  id="key" style="width:200px;">
+                </select>
+
+            </td>
+        </tr>
+
+
+    </table>
+
+    <p>
+        <input type="text" id="value" size="100"/>
+    </p>
+
+    <span class="ramble">
+        <br/><br/>
+        <span class="hdrtitle">This page is backed by the following artifacts in the following folders in your Artisan project:</span>
+        <br/><br/>
+        <table>
+            <tr>
+                <td class="prettyLabel">/artisan-starter-html/src/main/webapp/apps/bootstrap/editmap.html</td><td width="10">&nbsp;</td><td class="pretty">This HTML page. It imports and initializes the corresponding JavaScript.</td>
+            </tr>
+            <tr>
+                <td class="prettyLabel">/artisan-starter-html/src/main/webapp/apps/bootstrap/js/fetch.js</td><td width="10">&nbsp;</td><td class="pretty">This is the monolithic JS file which backs all of the tabs in this sample application.</td>
+            </tr>
+            <tr>
+                <td class="prettyLabel">/artisan-starter-html/src/main/webapp/apps/bootstrap/js/axeda.js</td><td width="10">&nbsp;</td><td class="pretty">This is the shared utility script which performs all actual communication with the Platform server.</td>
+            </tr>
+            <tr>
+                <td class="prettyLabel">/artisan-starter-scripts/src/main/groovy/tabs/EditMapService.groovy</td><td width="10">&nbsp;</td><td class="pretty">The Groovy script which defines the Scripto Service that is invoked to manage Extended Lists in the system.</td>
+            </tr>
+        </table>
+    </span>
+
+</form>
+
+
+
+<button id="saveMapValue">Save</button>
+<button id="addMapValue">Add Value</button>
+
+<button id="deleteMapValue">Delete Value</button>
+<button id="addMap">Add Map</button>
+<button id="deleteMap">Delete Map</button>
+
+
+</div>
+
+<div id="dialog-addKey" title="Add a New Value">
+    <form id="loginform">
+        <table>
+            <tr>
+                <td>Key:</td>
+                <td><input type="text" name="newkey" id="newkey"></td>
+            </tr>
+            <tr>
+                <td>Value:</td>
+                <td><input type="text" name="newvalue" id="newvalue"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="dialog-addMap" title="Add a New Map">
+    <form id="addMapForm">
+        <table>
+            <tr>
+                <td>Map Name:</td>
+                <td><input type="text" name="newMapName" id="newMapName" value="Team31_"></td>
+            </tr>
+            <tr>
+                <td>Key:</td>
+                <td><input type="text" name="newMapAndkey" id="newMapAndkey"></td>
+            </tr>
+            <tr>
+                <td>Value:</td>
+                <td><input type="text" name="newMapAndValue" id="newMapAndValue"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+<div id="dialog-confirmDeleteKey" title="Delete Key">
+    Confirm delete of key
+</div>
+
+<div id="dialog-confirmSaveMapValue" title="Confirm Save">
+    Confirm Saving New Key Value
+</div>
+
+
+<div id="dialog-confirmDeleteMap" title="Delete Key">
+    Confirm delete of Map
+</div>
+
+</body>
+</html>

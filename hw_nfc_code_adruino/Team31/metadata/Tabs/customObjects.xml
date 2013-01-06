@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        apc-metadata.xml
+
+        Don't forget to prefix all of your scripts with Team31 !!
+ -->
+<apcmetadata>
+
+    <expressionRules>
+    </expressionRules>
+    <customobjects>
+        <customobject>
+            <name>Team31TailLog</name>
+            <type>Action</type>
+            <sourcefile>tabs/Team31TailLog.groovy</sourcefile>
+        </customobject>
+        <customobject>
+            <name>Team31ExtendedMapService</name>
+            <type>Action</type>
+            <sourcefile>tabs/Team31ExtendedMapService.groovy</sourcefile>
+        </customobject>
+        <customobject>
+            <name>Team31ExtendedListService</name>
+            <type>Action</type>
+            <sourcefile>tabs/Team31ExtendedListService.groovy</sourcefile>
+        </customobject>
+        <customobject>
+            <name>Team31SendSMS</name>
+            <type>Action</type>
+            <sourcefile>tabs/Team31SendSMS.groovy</sourcefile>
+        </customobject>
+        <customobject>
+            <name>Team31YourApp</name>
+            <type>Action</type>
+            <sourcefile>tabs/Team31YourApp.groovy</sourcefile>
+        </customobject>
+
+    </customobjects>
+
+</apcmetadata>

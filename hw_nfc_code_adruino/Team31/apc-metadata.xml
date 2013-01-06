@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        apc-metadata.xml
+ -->
+<apcmetadata version="1.0.0" project="Hackathon2013_Team1">
+    <customobjects>
+        <import src="Tools/customObjects.xml" />
+        <import src="Tabs/customObjects.xml" />
+    </customobjects>
+
+    <applications>
+        <import src="Tabs/applications.xml"/>
+    </applications>
+
+    <expressionRules>
+
+    </expressionRules>
+
+    <initialization>
+        <!--<import src="Tools/initializations.xml" />-->
+    </initialization>
+
+</apcmetadata>

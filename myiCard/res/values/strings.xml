@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">myiCard</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_itouch_me">ITouchMeActivity</string>
+    <string name="title_activity_iaccept">IAcceptActivity</string>
+    <string name="title_activity_data_server">DataServerActivity</string>
+
+</resources>

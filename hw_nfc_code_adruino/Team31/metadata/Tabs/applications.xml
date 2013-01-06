@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        apc-metadata.xml
+ -->
+<apcmetadata>
+
+    <expressionRules>
+    </expressionRules>
+    <customobjects>
+    </customobjects>
+
+    <applications>
+        <application>
+            <description>BootstrApp Application</description>
+            <applicationId>bootstrapTeam31</applicationId>
+            <indexFile>login.html</indexFile>
+            <sourcePath>artisan-starter-html/src/main/webapp/apps/bootstrap</sourcePath>
+        </application>
+    </applications>
+
+</apcmetadata>
